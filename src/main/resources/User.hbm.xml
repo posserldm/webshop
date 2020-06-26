@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="posserldm.webshop.model.User" table="user" schema="webshop">
+        <id name="username" column="username"/>
+        <property name="password" column="password"/>
+        <property name="phoneNumber" column="phone_number"/>
+        <property name="email" column="email"/>
+        <property name="headImage" column="head_image"/>
+        <set name="addressesByUsername" inverse="true">
+            <key>
+                <column name="username"/>
+            </key>
+            <one-to-many not-found="ignore" class="posserldm.webshop.model.Address"/>
+        </set>
+        <set name="ordersByUsername" inverse="true">
+            <key>
+                <column name="username"/>
+            </key>
+            <one-to-many not-found="ignore" class="posserldm.webshop.model.MyOrder"/>
+        </set>
+    </class>
+</hibernate-mapping>

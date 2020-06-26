@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="posserldm.webshop.model.Address" table="address" schema="webshop">
+        <id name="addressId" column="address_id">
+            <generator class="native" />
+        </id>
+        <property name="username" column="username" />
+        <property name="address" column="address"/>
+        <many-to-one name="user" column="username" class="posserldm.webshop.model.User" insert="false" update="false" />
+    </class>
+</hibernate-mapping>

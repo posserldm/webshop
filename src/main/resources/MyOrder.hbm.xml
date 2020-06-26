@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="posserldm.webshop.model.MyOrder" table="myorder" schema="webshop">
+        <id name="orderId" column="order_id">
+            <generator class="native" />
+        </id>
+        <property name="username" column="username" />
+        <property name="phoneNumber" column="phone_number"/>
+        <property name="address" column="address"/>
+        <property name="state" column="state"/>
+        <property name="goodsName" column="goods_name"/>
+        <property name="goodPrice" column="goods_price" />
+        <property name="goodsNumber" column="goods_number"/>
+        <property name="cost" column="cost"/>
+        <property name="image" column="image"/>
+        <property name="times" column="times"/>
+        <many-to-one name="user" column="username" class="posserldm.webshop.model.User" insert="false" update="false" />
+    </class>
+</hibernate-mapping>
