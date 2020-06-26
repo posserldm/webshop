@@ -12,5 +12,6 @@
 1.  要装maven
 2.  tomcat8.5及以上
 3.  最好用idea运行
+4.  数据库：mysql
 
 
